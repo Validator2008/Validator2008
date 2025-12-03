@@ -23,7 +23,8 @@ jobs:
             
             console.log(`Looking for PRs created before: ${twoYearsAgo.toISOString()}`);
             
-            const { data: pullRequests } = await github.rest.pulls.list({
+            // Fetch all open pull requests using pagination
+            const pullRequests = await github.paginate(github.rest.pulls.list, {
               owner: context.repo.owner,
               repo: context.repo.repo,
               state: 'open',
