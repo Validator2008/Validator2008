@@ -1,5 +1,8 @@
 // Mobile Navigation Toggle
 document.addEventListener('DOMContentLoaded', function() {
+    // Constants
+    const SCROLL_OFFSET = 150;
+    
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
     const navLinks = document.querySelectorAll('.nav-link');
@@ -38,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
             
-            if (window.pageYOffset >= sectionTop - 150) {
+            if (window.pageYOffset >= sectionTop - SCROLL_OFFSET) {
                 current = section.getAttribute('id');
             }
         });
