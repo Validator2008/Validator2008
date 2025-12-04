@@ -5,6 +5,7 @@
     box-sizing: border-box;
 }
 
+/* Light theme defaults */
 :root {
     --primary-color: #2563eb;
     --secondary-color: #1e40af;
@@ -18,6 +19,23 @@
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     --navbar-height: 70px;
+}
+
+/* Dark theme overrides */
+body.dark-theme {
+    --primary-color: #38bdf8;
+    --secondary-color: #0ea5e9;
+    --accent-color: #22c55e;
+    --text-primary: #e5e7eb;
+    --text-secondary: #9ca3af;
+    --text-light: #f9fafb;
+    --background-light: #020617;
+    --background-white: #020617;
+    --border-color: #1f2937;
+    --shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.7), 0 2px 4px -1px rgba(15, 23, 42, 0.8);
+    --shadow-lg: 0 20px 25px -5px rgba(15, 23, 42, 0.9), 0 10px 10px -5px rgba(15, 23, 42, 0.9);
+    background-color: var(--background-white);
+    color: var(--text-primary);
 }
 
 body {
@@ -58,6 +76,44 @@ html {
     color: var(--primary-color);
 }
 
+/* Theme toggle */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-left: 1.5rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 9999px;
+    border: 1px solid var(--border-color);
+    background-color: var(--background-light);
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 500;
+    user-select: none;
+    transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+}
+
+.theme-toggle-icon {
+    font-size: 1.1rem;
+    line-height: 1;
+}
+
+.theme-toggle-label {
+    letter-spacing: 0.02em;
+}
+
+/* Adjust toggle colors in dark mode */
+body.dark-theme .theme-toggle {
+    background-color: #020617;
+    border-color: #1e293b;
+}
+
+/* Navigation menu / burger */
 .nav-toggle {
     display: none;
     background: none;
@@ -80,6 +136,7 @@ html {
     display: flex;
     list-style: none;
     gap: 2rem;
+    align-items: center;
 }
 
 .nav-link {
@@ -90,7 +147,8 @@ html {
     padding: 0.5rem 0;
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link.active {
     color: var(--primary-color);
 }
 
@@ -111,7 +169,8 @@ html {
         padding: 5rem 2rem 2rem;
         box-shadow: var(--shadow-lg);
         transition: right 0.3s ease;
-        gap: 1rem;
+        gap: 1.2rem;
+        align-items: flex-start;
     }
 
     .nav-menu.active {
@@ -132,6 +191,11 @@ html {
 
     .nav-link {
         font-size: 1.1rem;
+    }
+
+    .theme-toggle {
+        margin-left: 0;
+        margin-top: 0.5rem;
     }
 }
 
@@ -318,9 +382,19 @@ html {
     box-shadow: var(--shadow-lg);
 }
 
+/* New: image-based icons for services */
 .service-icon {
-    font-size: 3rem;
     margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.service-icon img {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: var(--shadow);
 }
 
 .service-card h3 {
@@ -367,9 +441,19 @@ html {
     box-shadow: var(--shadow-lg);
 }
 
+/* New: image-based icons for contact */
 .contact-icon {
-    font-size: 2.5rem;
     margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-icon img {
+    width: 48px;
+    height: 48px;
+    border-radius: 9999px;
+    object-fit: cover;
+    box-shadow: var(--shadow);
 }
 
 .contact-info h3 {

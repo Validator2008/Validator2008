@@ -1,4 +1,4 @@
-// Mobile Navigation Toggle
+// Mobile Navigation Toggle + Theme Toggle
 document.addEventListener('DOMContentLoaded', function() {
     // Constants
     const SCROLL_OFFSET = 150;
@@ -6,6 +6,52 @@ document.addEventListener('DOMContentLoaded', function() {
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
     const navLinks = document.querySelectorAll('.nav-link');
+
+    // Theme toggle elements
+    const themeToggle = document.getElementById('themeToggle');
+    const themeToggleIcon = document.getElementById('themeToggleIcon');
+    const themeToggleLabel = document.getElementById('themeToggleLabel');
+    const body = document.body;
+
+    // ---- THEME LOGIC ----
+
+    function applyTheme(theme) {
+        const isDark = theme === 'dark';
+
+        if (isDark) {
+            body.classList.add('dark-theme');
+            if (themeToggleIcon) themeToggleIcon.textContent = '☀️';
+            if (themeToggleLabel) themeToggleLabel.textContent = 'Light';
+        } else {
+            body.classList.remove('dark-theme');
+            if (themeToggleIcon) themeToggleIcon.textContent = '🌙';
+            if (themeToggleLabel) themeToggleLabel.textContent = 'Dark';
+        }
+    }
+
+    // Initialize theme from localStorage or system preference
+    (function initTheme() {
+        const storedTheme = localStorage.getItem('theme');
+        if (storedTheme === 'light' || storedTheme === 'dark') {
+            applyTheme(storedTheme);
+        } else {
+            const prefersDark = window.matchMedia &&
+                window.matchMedia('(prefers-color-scheme: dark)').matches;
+            applyTheme(prefersDark ? 'dark' : 'light');
+        }
+    })();
+
+    // Toggle theme on click
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+            const isCurrentlyDark = body.classList.contains('dark-theme');
+            const newTheme = isCurrentlyDark ? 'light' : 'dark';
+            applyTheme(newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+    }
+
+    // ---- NAV / SCROLL LOGIC (existing) ----
 
     // Toggle mobile menu
     navToggle.addEventListener('click', function() {

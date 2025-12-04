@@ -9,22 +9,30 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="nav-brand">Ilya Sakharov</div>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <span class="hamburger"></span>
-                <span class="hamburger"></span>
-                <span class="hamburger"></span>
-            </button>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#work-experience" class="nav-link">Work Experience</a></li>
-                <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+ <nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <div class="nav-brand">Ilya Sakharov</div>
+
+        <!-- Theme toggle -->
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle color theme">
+            <span class="theme-toggle-icon" id="themeToggleIcon">🌙</span>
+            <span class="theme-toggle-label" id="themeToggleLabel">Dark</span>
+        </button>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span class="hamburger"></span>
+            <span class="hamburger"></span>
+            <span class="hamburger"></span>
+        </button>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#work-experience" class="nav-link">Work Experience</a></li>
+            <li><a href="#services" class="nav-link">Services</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
 
     <section class="hero">
         <div class="hero-content">
@@ -139,77 +147,80 @@
         </div>
     </section>
 
-    <section id="services" class="section">
-        <div class="container">
-            <h2 class="section-title">Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">⚙️</div>
-                    <h3>Technology Strategy</h3>
-                    <p>Executive-level advisory on scaling engineering, platform strategy, and organizational design.</p>
+<section id="services" class="section">
+    <div class="container">
+        <h2 class="section-title">Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <img src="images/technology-strategy.png" alt="Technology strategy illustration">
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">🧭</div>
-                    <h3>Platform Engineering</h3>
-                    <p>Design and leadership of platform orgs, SRE, observability, developer experience, and resilient systems.</p>
+                <h3>Technology Strategy</h3>
+                <p>Executive-level advisory on scaling engineering, platform strategy, and organizational design.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <img src="images/platform-engineering.png" alt="Platform engineering illustration">
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">📉</div>
-                    <h3>Cost & Performance Optimization</h3>
-                    <p>Cloud cost reduction, infrastructure modernization, and performance scaling.</p>
+                <h3>Platform Engineering</h3>
+                <p>Design and leadership of platform orgs, SRE, observability, developer experience, and resilient systems.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <img src="images/cost-performance.png" alt="Cost and performance optimization illustration">
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">🏗️</div>
-                    <h3>Engineering Org Scaling</h3>
-                    <p>Leadership coaching, org design, quality transformations, and process modernization.</p>
+                <h3>Cost & Performance Optimization</h3>
+                <p>Cloud cost reduction, infrastructure modernization, and performance scaling.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <img src="images/engineering-org-scaling.png" alt="Engineering organization scaling illustration">
                 </div>
+                <h3>Engineering Org Scaling</h3>
+                <p>Leadership coaching, org design, quality transformations, and process modernization.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="contact" class="section section-alt">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <p class="contact-intro">
-                    Interested in advisory, consulting, or speaking engagements? Reach out.
-                </p>
-                <div class="contact-methods">
-                    <div class="contact-item">
-                        <div class="contact-icon">📧</div>
-                        <div class="contact-info">
-                            <h3>Email</h3>
-                            ilya.sakharov@gmail.com
-                        </div>
+
+<section id="contact" class="section section-alt">
+    <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-content">
+            <p class="contact-intro">
+                Interested in advisory, consulting, or speaking engagements? Reach out.
+            </p>
+            <div class="contact-methods">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <img src="images/contact-email.png" alt="Email icon">
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">💼</div>
-                        <div class="contact-info">
-                            <h3>LinkedIn</h3>
-                            <a href="https://www.linkedin.com/in/ilyasakharov/" target="_blank">linkedin.com/in/ilyasakharov/</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">🐙</div>
-                        <div class="contact-info">
-                            <h3>GitHub</h3>
-                            <a href="https://github.com/Validator2008" target="_blank">github.com/Validator2008</a>
-                        </div>
+                    <div class="contact-info">
+                        <h3>Email</h3>
+                        firstN.lastN(@)gmail.com
                     </div>
                 </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <img src="images/contact-linkedin.png" alt="LinkedIn icon">
+                    </div>
+                    <div class="contact-info">
+                        <h3>LinkedIn</h3>
+                        <a href="https://www.linkedin.com/in/ilyasakharov/" target="_blank">linkedin.com/in/ilyasakharov/</a>
+                    </div>
+                </div>
+                
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2024 Ilya Sakharov. All rights reserved.</p>
-                <div class="footer-links">
-                    <a href="https://www.linkedin.com/in/ilyasakharov/" target="_blank">LinkedIn</a>
-                    <span class="separator">|</span>
-                    <a href="https://github.com/Validator2008" target="_blank">GitHub</a>
-                </div>
+                <p>&copy; 2025 Ilya Sakharov. All rights reserved.</p>
             </div>
         </div>
     </footer>
