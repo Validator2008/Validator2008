@@ -155,4 +155,31 @@ document.addEventListener('DOMContentLoaded', function() {
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
     });
+
+    // ---- EXPERIENCE ACCORDION LOGIC ----
+    const experienceItems = document.querySelectorAll('.experience-item[data-experience]');
+    const experienceToggles = document.querySelectorAll('.experience-toggle');
+
+    function collapseAllExperiences() {
+        experienceItems.forEach(item => {
+            item.classList.remove('expanded');
+            const btn = item.querySelector('.experience-toggle');
+            if (btn) btn.textContent = 'Read more...';
+        });
+    }
+
+    experienceToggles.forEach(toggle => {
+        toggle.addEventListener('click', function() {
+            const item = this.closest('.experience-item');
+            const isExpanded = item.classList.contains('expanded');
+
+            // Only one expanded at a time
+            collapseAllExperiences();
+
+            if (!isExpanded) {
+                item.classList.add('expanded');
+                this.textContent = 'Show less';
+            }
+        });
+    });
 });
