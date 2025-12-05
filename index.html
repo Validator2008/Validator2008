@@ -11,13 +11,14 @@
 <body>
  <nav class="navbar" id="navbar">
     <div class="nav-container">
-        <div class="nav-brand">Ilya Sakharov</div>
-
-        <!-- Theme toggle -->
-        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle color theme">
-            <span class="theme-toggle-icon" id="themeToggleIcon">🌙</span>
-            <span class="theme-toggle-label" id="themeToggleLabel">Dark</span>
-        </button>
+        <div class="nav-left">
+            <!-- Theme toggle (moved to far left, before name) -->
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle color theme">
+                <span class="theme-toggle-icon" id="themeToggleIcon">🌙</span>
+                <span class="theme-toggle-label" id="themeToggleLabel">Dark</span>
+            </button>
+            <div class="nav-brand">Ilya Sakharov</div>
+        </div>
 
         <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
             <span class="hamburger"></span>
@@ -73,76 +74,123 @@
         <div class="container">
             <h2 class="section-title">Work Experience</h2>
             <div class="experience-timeline">
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <h3>Executive Director of Engineering</h3>
-                        <span class="experience-period">2025 – Present</span>
+
+                <!-- Redcare -->
+                <div class="experience-item" data-experience>
+                    <div class="experience-logo">
+                        <img src="images/logo-redcare-pharmacy.png" alt="Redcare Pharmacy logo">
                     </div>
-                    <p class="experience-company">Redcare Pharmacy, Berlin</p>
-                    <ul class="experience-details">
-                        <li>Leading 170+ engineers across eRX, webshop, apps, payments, and multi-country operations.</li>
-                        <li>Introduced platform engineering, observability, and incident management practices.</li>
-                        <li>Shifted quality ownership to product teams; defined engineering excellence standards.</li>
-                        <li>Managing hybrid workforce models (FTE, contractors, agencies) for scalable delivery.</li>
-                    </ul>
+                    <div class="experience-body">
+                        <div class="experience-header">
+                            <h3>Executive Director of Engineering</h3>
+                            <span class="experience-period">2025 – Present</span>
+                        </div>
+                        <p class="experience-company">Redcare Pharmacy, Berlin</p>
+                        <div class="experience-content">
+                            <ul class="experience-details">
+                                <li>Leading 170+ engineers across eRX, webshop, apps, payments, and multi-country operations.</li>
+                                <li>Introduced platform engineering, observability, and incident management practices.</li>
+                                <li>Shifted quality ownership to product teams; defined engineering excellence standards.</li>
+                                <li>Managing hybrid workforce models (FTE, contractors, agencies) for scalable delivery.</li>
+                            </ul>
+                        </div>
+                        <button class="experience-toggle" type="button">Read more...</button>
+                    </div>
                 </div>
 
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <h3>Chief Technology Officer</h3>
-                        <span class="experience-period">2022 – 2025</span>
+                <!-- Codility -->
+                <div class="experience-item" data-experience>
+                    <div class="experience-logo">
+                        <img src="images/logo-codility.png" alt="Codility logo">
                     </div>
-                    <p class="experience-company">Codility, Berlin</p>
-                    <ul class="experience-details">
-                        <li>Boosted CSAT above 95% while increasing delivery velocity year-over-year.</li>
-                        <li>Defined & executed tech and data vision aligned to business outcomes.</li>
-                        <li>Cut AWS costs by 45% in 4 months and modernized delivery processes.</li>
-                        <li>Acted as interim Head of Product; built discovery-driven product culture.</li>
-                        <li>Led company through downturn, refinancing, cost optimization, and reorganization.</li>
-                    </ul>
+                    <div class="experience-body">
+                        <div class="experience-header">
+                            <h3>Chief Technology Officer</h3>
+                            <span class="experience-period">2022 – 2025</span>
+                        </div>
+                        <p class="experience-company">Codility, Berlin</p>
+                        <div class="experience-content">
+                            <ul class="experience-details">
+                                <li>Boosted CSAT above 95% while increasing delivery velocity year-over-year.</li>
+                                <li>Defined & executed tech and data vision aligned to business outcomes.</li>
+                                <li>Cut AWS costs by 45% in 4 months and modernized delivery processes.</li>
+                                <li>Acted as interim Head of Product; built discovery-driven product culture.</li>
+                                <li>Led company through downturn, refinancing, cost optimization, and reorganization.</li>
+                            </ul>
+                        </div>
+                        <button class="experience-toggle" type="button">Read more...</button>
+                    </div>
                 </div>
 
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <h3>Director of Engineering – Infrastructure Alliance</h3>
-                        <span class="experience-period">2021 – 2022</span>
+                <!-- Getir -->
+                <div class="experience-item" data-experience>
+                    <div class="experience-logo">
+                        <img src="images/logo-getir.png" alt="Getir logo">
                     </div>
-                    <p class="experience-company">Getir, Berlin</p>
-                    <ul class="experience-details">
-                        <li>Led platform, core engineering, QA, corporate IT, and standards for 140+ engineers globally.</li>
-                        <li>Transformed infrastructure into a self-service developer platform.</li>
-                        <li>Drove $300K+ monthly cloud savings through optimization.</li>
-                        <li>Built global corporate IT; led SAP HANA4 ERP implementation planning.</li>
-                        <li>Chaired technical standards committee driving hiring and engineering excellence.</li>
-                    </ul>
+                    <div class="experience-body">
+                        <div class="experience-header">
+                            <h3>Director of Engineering – Infrastructure Alliance</h3>
+                            <span class="experience-period">2021 – 2022</span>
+                        </div>
+                        <p class="experience-company">Getir, Berlin</p>
+                        <div class="experience-content">
+                            <ul class="experience-details">
+                                <li>Led platform, core engineering, QA, corporate IT, and standards for 140+ engineers globally.</li>
+                                <li>Transformed infrastructure into a self-service developer platform.</li>
+                                <li>Drove $300K+ monthly cloud savings through optimization.</li>
+                                <li>Built global corporate IT; led SAP HANA4 ERP implementation planning.</li>
+                                <li>Chaired technical standards committee driving hiring and engineering excellence.</li>
+                            </ul>
+                        </div>
+                        <button class="experience-toggle" type="button">Read more...</button>
+                    </div>
                 </div>
 
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <h3>Senior Director of Platform Engineering</h3>
-                        <span class="experience-period">2018 – 2021</span>
+                <!-- HelloFresh -->
+                <div class="experience-item" data-experience>
+                    <div class="experience-logo">
+                        <img src="images/logo-hellofresh.png" alt="HelloFresh logo">
                     </div>
-                    <p class="experience-company">HelloFresh SE, Berlin</p>
-                    <ul class="experience-details">
-                        <li>Led global platform engineering, release engineering, and SRE organizations.</li>
-                        <li>Introduced observability and incident response, reducing MTTR below 40 minutes.</li>
-                        <li>Enabled hyper-growth with scalable cloud and developer tooling.</li>
-                        <li>Improved developer tooling satisfaction (NPS +40).</li>
-                        <li>Built modern QA organization and automation frameworks.</li>
-                    </ul>
+                    <div class="experience-body">
+                        <div class="experience-header">
+                            <h3>Senior Director of Platform Engineering</h3>
+                            <span class="experience-period">2018 – 2021</span>
+                        </div>
+                        <p class="experience-company">HelloFresh SE, Berlin</p>
+                        <div class="experience-content">
+                            <ul class="experience-details">
+                                <li>Led global platform engineering, release engineering, and SRE organizations.</li>
+                                <li>Introduced observability and incident response, reducing MTTR below 40 minutes.</li>
+                                <li>Enabled hyper-growth with scalable cloud and developer tooling.</li>
+                                <li>Improved developer tooling satisfaction (NPS +40).</li>
+                                <li>Built modern QA organization and automation frameworks.</li>
+                            </ul>
+                        </div>
+                        <button class="experience-toggle" type="button">Read more...</button>
+                    </div>
                 </div>
 
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <h3>Director of Engineering in Test</h3>
-                        <span class="experience-period">2012 – 2018</span>
+                <!-- RSA -->
+                <div class="experience-item" data-experience>
+                    <div class="experience-logo">
+                        <img src="images/logo-rsa-security.png" alt="RSA Security logo">
                     </div>
-                    <p class="experience-company">RSA Security (Dell Company), Israel</p>
-                    <ul class="experience-details">
-                        <li>Led global QE organization for fraud prevention products.</li>
-                        <li>Drove industry recognition: Gartner Leader, CompSec Award.</li>
-                    </ul>
+                    <div class="experience-body">
+                        <div class="experience-header">
+                            <h3>Director of Engineering in Test</h3>
+                            <span class="experience-period">2012 – 2018</span>
+                        </div>
+                        <p class="experience-company">RSA Security (Dell Company), Israel</p>
+                        <div class="experience-content">
+                            <ul class="experience-details">
+                                <li>Led global QE organization for fraud prevention products.</li>
+                                <li>Drove industry recognition: Gartner Leader, CompSec Award.</li>
+                            </ul>
+                        </div>
+                        <button class="experience-toggle" type="button">Read more...</button>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
