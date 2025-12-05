@@ -70,6 +70,12 @@ html {
     align-items: center;
 }
 
+/* New: left cluster for toggle + brand */
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
 .nav-brand {
     font-size: 1.5rem;
     font-weight: 700;
@@ -81,7 +87,7 @@ html {
     display: flex;
     align-items: center;
     gap: 0.4rem;
-    margin-left: 1.5rem;
+    margin-right: 1.5rem;
     padding: 0.35rem 0.75rem;
     border-radius: 9999px;
     border: 1px solid var(--border-color);
@@ -154,6 +160,10 @@ body.dark-theme .theme-toggle {
 
 /* Mobile Navigation */
 @media (max-width: 768px) {
+    .nav-container {
+        padding: 1rem;
+    }
+
     .nav-toggle {
         display: block;
     }
@@ -194,8 +204,7 @@ body.dark-theme .theme-toggle {
     }
 
     .theme-toggle {
-        margin-left: 0;
-        margin-top: 0.5rem;
+        margin-right: 0.75rem;
     }
 }
 
@@ -316,11 +325,38 @@ body.dark-theme .theme-toggle {
     border-radius: 10px;
     box-shadow: var(--shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
 }
 
 .experience-item:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
+}
+
+/* Logo placeholder – round image */
+.experience-logo {
+    width: 64px;
+    height: 64px;
+    border-radius: 9999px;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: var(--shadow);
+    background-color: var(--background-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.experience-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.experience-body {
+    flex: 1;
 }
 
 .experience-header {
@@ -345,18 +381,52 @@ body.dark-theme .theme-toggle {
 .experience-company {
     font-size: 1.1rem;
     color: var(--text-secondary);
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     font-weight: 600;
+}
+
+/* Collapsible content */
+.experience-content {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;       /* show 4 lines when collapsed */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .experience-details {
     list-style-position: inside;
-    color: var(--text-secondary);
 }
 
 .experience-details li {
     margin-bottom: 0.5rem;
     line-height: 1.6;
+}
+
+/* Expanded state – remove clamp */
+.experience-item.expanded .experience-content {
+    -webkit-line-clamp: unset;
+    max-height: none;
+}
+
+/* "Read more..." toggle */
+.experience-toggle {
+    margin-top: 1rem;
+    padding: 0;
+    border: none;
+    background: none;
+    color: var(--primary-color);
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    font-size: 0.95rem;
+}
+
+.experience-toggle:focus {
+    outline: none;
+    text-decoration-thickness: 2px;
 }
 
 /* Services Section */
@@ -539,13 +609,14 @@ body.dark-theme .theme-toggle {
         flex-wrap: wrap;
         justify-content: center;
     }
+
+    .experience-item {
+        flex-direction: row;
+        align-items: flex-start;
+    }
 }
 
 @media (max-width: 480px) {
-    .nav-container {
-        padding: 1rem;
-    }
-
     .hero {
         padding: 6rem 1rem 4rem;
     }
@@ -556,5 +627,13 @@ body.dark-theme .theme-toggle {
 
     .container {
         padding: 0 1rem;
+    }
+
+    .experience-item {
+        flex-direction: column;
+    }
+
+    .experience-logo {
+        margin-bottom: 0.75rem;
     }
 }
